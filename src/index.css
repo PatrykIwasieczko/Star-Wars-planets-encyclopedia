@@ -11,3 +11,27 @@ body {
   letter-spacing: 1.1px;
   background-color: #e0e6ee;
 }
+
+.logo {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.wrapper {
+  width: 95vw;
+  margin: 0 auto;
+}
+
+.collapsible {
+  margin: 1rem 0;
+}
+
+.collapsible-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 1rem;
+  color: #20a1be;
+}
