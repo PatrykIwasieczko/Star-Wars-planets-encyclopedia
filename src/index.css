@@ -34,4 +34,13 @@ body {
   background-color: #fff;
   padding: 1rem;
   color: #20a1be;
+  cursor: pointer;
+}
+
+.collapsible-opened {
+  display: block;
+}
+
+.collapsible-closed {
+  display: none;
 }

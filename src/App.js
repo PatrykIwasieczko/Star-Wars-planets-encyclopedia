@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 // Components
 import { DATA } from "./data";
 import { transformData } from "./utils";
+import Collapsible from "./components/Collapsible";
 
 const App = () => {
     const [planets] = useState(DATA.data.planets);
@@ -21,26 +22,7 @@ const App = () => {
             </div>
             <div className="wrapper">
                 {transformedData.map((singleFilm) => (
-                    <div className="collapsible" key={singleFilm.filmId}>
-                        <div className="collapsible-header">
-                            <h3>{singleFilm.filmTitle}</h3>
-                            <img
-                                src="/images/ARROW OPEN.svg"
-                                alt="arrow open"
-                            />
-                        </div>
-
-                        <ul>
-                            {singleFilm.planetsInFilms.map((singlePlanet) => (
-                                <p
-                                    className="collapsible-text"
-                                    key={singlePlanet.planetId}
-                                >
-                                    {singlePlanet.planetName}
-                                </p>
-                            ))}
-                        </ul>
-                    </div>
+                    <Collapsible singleFilm={singleFilm} />
                 ))}
             </div>
         </div>
