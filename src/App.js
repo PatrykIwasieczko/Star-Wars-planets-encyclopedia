@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { DATA } from "./data";
+import { transformData } from "./utils";
 
 const App = () => {
     const [planets, setPlanets] = useState(DATA.data.planets);
@@ -7,34 +8,8 @@ const App = () => {
     const [transformedData, setTransformedData] = useState([]);
 
     useEffect(() => {
-        transformData();
-    }, []);
-
-    const transformData = () => {
-        const filmData = [];
-        films.map((film) => {
-            return filmData.push({
-                filmId: film.id,
-                filmTitle: film.title,
-                planetsInFilms: [],
-            });
-        });
-        planets.map((planet) => {
-            if (planet.filmConnection.films.length !== 0) {
-                planet.filmConnection.films.forEach((film) => {
-                    filmData.forEach((data) => {
-                        if (data.filmId === film.id) {
-                            data.planetsInFilms.push({
-                                planetId: planet.id,
-                                planetName: planet.name,
-                            });
-                        }
-                    });
-                });
-            }
-            return setTransformedData(filmData);
-        });
-    };
+        setTransformedData(transformData(films, planets));
+    }, [films, planets]);
 
     return (
         <div className="App">
