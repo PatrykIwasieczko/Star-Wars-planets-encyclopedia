@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CollapsibleContent from "./CollapsibleContent";
+import CollapsibleHeaders from "./CollapsibleHeaders";
 
 const Collapsible = ({ singleFilm }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,10 +21,12 @@ const Collapsible = ({ singleFilm }) => {
                 />
             </div>
 
+            <CollapsibleHeaders isOpen={isOpen} />
             {singleFilm.planetsInFilms.map((singlePlanet) => (
                 <CollapsibleContent
                     singlePlanet={singlePlanet}
                     isOpen={isOpen}
+                    key={singlePlanet.planetId}
                 />
             ))}
         </div>

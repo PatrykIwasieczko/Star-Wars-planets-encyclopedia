@@ -35,12 +35,26 @@ body {
   padding: 1rem;
   color: #20a1be;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .collapsible-opened {
-  display: block;
+  background-color: #fcfcfd;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 0.5rem 1rem;
+  transform: translateY(-5px);
+  text-align: right;
+}
+
+.collapsible p:first-child {
+  text-align: left;
 }
 
 .collapsible-closed {
   display: none;
+}
+
+.headers {
+  border-bottom: 1px solid #c4c4c4;
 }

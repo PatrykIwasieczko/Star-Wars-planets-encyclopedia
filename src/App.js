@@ -22,7 +22,10 @@ const App = () => {
             </div>
             <div className="wrapper">
                 {transformedData.map((singleFilm) => (
-                    <Collapsible singleFilm={singleFilm} />
+                    <Collapsible
+                        singleFilm={singleFilm}
+                        key={singleFilm.filmId}
+                    />
                 ))}
             </div>
         </div>

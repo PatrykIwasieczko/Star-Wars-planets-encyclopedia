@@ -15,6 +15,16 @@ export const transformData = (films, planets) => {
                         data.planetsInFilms.push({
                             planetId: planet.id,
                             planetName: planet.name,
+                            rotationPeriod: planet.rotationPeriod,
+                            orbitalPeriod: planet.orbitalPeriod,
+                            diameter: planet.diameter,
+                            climate: planet.climates[0],
+                            surfaceWater: planet.surfaceWater
+                                ? planet.surfaceWater
+                                : "unknown",
+                            population: planet.population
+                                ? planet.population
+                                : "unknown",
                         });
                     }
                 });
