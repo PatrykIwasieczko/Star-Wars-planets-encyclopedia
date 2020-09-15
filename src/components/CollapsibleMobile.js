@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CollapsibleContent from "./CollapsibleContent";
 import CollapsibleHeaders from "./CollapsibleHeaders";
 
-const Collapsible = ({ singleFilm }) => {
+const CollapsibleMobile = ({ singleFilm }) => {
   const [param, setParam] = useState("");
   const [isAscending, setIsAscending] = useState(null);
 
@@ -20,29 +20,26 @@ const Collapsible = ({ singleFilm }) => {
         />
       </div>
 
-      <div className={`${isOpen ? "opened" : "closed"} collapsible-content`}>
-        <CollapsibleHeaders
-          isOpen={isOpen}
-          param={param}
-          setParam={setParam}
-          isAscending={isAscending}
-          setIsAscending={setIsAscending}
-        />
-        {singleFilm.planetsInFilms.sort((a, b) => {
-          return isAscending
-            ? ((a[param] > b[param] ? 1 : -1))
-            : (a[param] > b[param] ? -1 : 1);
-        })
+      <div className={`collapsible-content ${isOpen ? "opened" : "closed"}`}>
+        {singleFilm.planetsInFilms
           .map((singlePlanet) => (
-            <CollapsibleContent
-              singlePlanet={singlePlanet}
-              isOpen={isOpen}
-              key={singlePlanet.planetId}
-            />
+            <div className="collapsible-row" key={singlePlanet.planetId}>
+              <CollapsibleHeaders
+                isOpen={isOpen}
+                param={param}
+                setParam={setParam}
+                isAscending={isAscending}
+                setIsAscending={setIsAscending}
+              />
+              <CollapsibleContent
+                singlePlanet={singlePlanet}
+                isOpen={isOpen}
+              />
+            </div>
           ))}
       </div>
     </div>
   );
 };
 
-export default Collapsible;
+export default CollapsibleMobile;

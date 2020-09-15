@@ -4,7 +4,7 @@ const SingleHeader = (
   { headerTitle, setIsAscending, isAscending, setParam },
 ) => {
   return (
-    <div className="collapsible-text">
+    <div className="single-collapsible">
       <p
         className="collapsible-text"
       >
