@@ -81,3 +81,7 @@ body {
 .active-icon {
   color: #20a1be;
 }
+
+.inactive-icon {
+  color: #000;
+}

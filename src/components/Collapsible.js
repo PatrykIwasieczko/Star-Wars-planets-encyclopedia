@@ -5,9 +5,6 @@ import CollapsibleHeaders from "./CollapsibleHeaders";
 const Collapsible = ({ singleFilm }) => {
   const [param, setParam] = useState("");
   const [isAscending, setIsAscending] = useState(null);
-  //   const sortByParam = (a, b, ascending) => {
-  //     return a[param] > b[param] ? 1 : -1;
-  //   };
 
   const [isOpen, setIsOpen] = useState(false);
   return (
