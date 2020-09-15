@@ -47,7 +47,7 @@ body {
   text-align: right;
 }
 
-.collapsible p:first-child {
+.collapsible div:first-child {
   text-align: left;
 }
 
@@ -57,4 +57,27 @@ body {
 
 .headers {
   border-bottom: 1px solid #c4c4c4;
+}
+
+.collapsible-text {
+  display: flex;
+}
+
+.collapsible-text:first-child {
+  margin-right: 10px;
+}
+
+.caret-icons {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  /* margin-top: -3px; */
+}
+
+.caret-icons i {
+  height: 12px;
+}
+
+.active-icon {
+  color: #20a1be;
 }
