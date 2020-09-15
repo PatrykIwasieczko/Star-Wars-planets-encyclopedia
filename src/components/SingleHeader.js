@@ -1,7 +1,7 @@
 import React from "react";
 
 const SingleHeader = (
-  { headerTitle, setIsAscending, isAscending, setParam },
+  { headerTitle, setIsAscending, isAscending, setParam, param },
 ) => {
   return (
     <div className="single-collapsible">
@@ -14,7 +14,7 @@ const SingleHeader = (
         <i
           onClick={() => {
             setIsAscending(false);
-            setParam("planetName");
+            setParam(param);
           }}
           className={`fas fa-caret-up ${
             !isAscending ? "active-icon" : "inactive-icon"
@@ -24,7 +24,7 @@ const SingleHeader = (
         <i
           onClick={() => {
             setIsAscending(true);
-            setParam("planetName");
+            setParam(param);
           }}
           className={`fas fa-caret-down ${
             isAscending ? "active-icon" : "inactive-icon"

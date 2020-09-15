@@ -31,7 +31,7 @@ const Collapsible = ({ singleFilm }) => {
         {singleFilm.planetsInFilms.sort((a, b) => {
           return isAscending
             ? ((a[param] > b[param] ? 1 : -1))
-            : (a[param] > b[param] ? -1 : 1);
+            : (a[param] < b[param] ? 1 : -1);
         })
           .map((singlePlanet) => (
             <CollapsibleContent

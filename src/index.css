@@ -26,7 +26,7 @@ body {
 .collapsible {
   margin: 1rem 0;
   background-color: #fff;
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px;
   box-shadow: 0px 5px 5px 0px rgba(220, 220, 220, 0.75);
 }
 

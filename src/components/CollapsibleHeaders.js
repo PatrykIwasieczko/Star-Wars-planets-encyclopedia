@@ -1,14 +1,14 @@
 import React from "react";
 import SingleHeader from "./SingleHeader";
 
-const headersTitles = [
-  "Planet name",
-  "Rotation period",
-  "Orbital period",
-  "Diameter",
-  "Climate",
-  "Surface water",
-  "Population",
+const titlesAndParams = [
+  { key: "planetName", value: "Planet name" },
+  { key: "rotationPeriod", value: "Rotation period" },
+  { key: "orbitalPeriod", value: "Orbital period" },
+  { key: "diameter", value: "Diameter" },
+  { key: "climate", value: "Climate" },
+  { key: "surfaceWater", value: "Surface water" },
+  { key: "population", value: "Population" },
 ];
 
 const CollapsibleHeaders = (
@@ -20,13 +20,14 @@ const CollapsibleHeaders = (
         ? "collapsible-opened headers"
         : "collapsible-closed headers"}
     >
-      {headersTitles.map((headersTitle) => (
+      {titlesAndParams.map((headersTitle) => (
         <SingleHeader
-          key={headersTitle}
-          headerTitle={headersTitle}
+          key={headersTitle.value}
+          headerTitle={headersTitle.value}
           setIsAscending={setIsAscending}
           isAscending={isAscending}
           setParam={setParam}
+          param={headersTitle.key}
         />
       ))}
     </ul>
