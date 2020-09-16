@@ -16,6 +16,7 @@ const Collapsible: React.FC<Props> = ({ singleFilm }) => {
     const [param, setParam] = useState<string>("");
     const [isAscending, setIsAscending] = useState<boolean>(false);
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [isText, setIsText] = useState<boolean>(true);
     return (
         <div className="collapsible" key={singleFilm.filmId}>
             <div
@@ -39,6 +40,7 @@ const Collapsible: React.FC<Props> = ({ singleFilm }) => {
                 } collapsible-content`}
             >
                 <CollapsibleHeaders
+                    setIsText={setIsText}
                     isOpen={isOpen}
                     param={param}
                     setParam={setParam}
@@ -47,7 +49,8 @@ const Collapsible: React.FC<Props> = ({ singleFilm }) => {
                 />
                 {singleFilm.planetsInFilms
                     .sort((a: Planet, b: Planet) => {
-                        return isAscending
+                        return (isAscending && isText) ||
+                            (!isAscending && !isText)
                             ? a[param] > b[param]
                                 ? 1
                                 : -1

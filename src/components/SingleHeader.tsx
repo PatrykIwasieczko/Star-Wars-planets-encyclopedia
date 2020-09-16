@@ -7,6 +7,7 @@ type Props = {
     isAscending: boolean;
     setParam: (param: string) => void;
     param: string;
+    setIsText: (boolean: boolean) => void;
 };
 
 const SingleHeader: React.FC<Props> = ({
@@ -15,6 +16,7 @@ const SingleHeader: React.FC<Props> = ({
     isAscending,
     setParam,
     param,
+    setIsText,
 }) => {
     return (
         <div className="single-collapsible">
@@ -24,6 +26,11 @@ const SingleHeader: React.FC<Props> = ({
                     onClick={() => {
                         setIsAscending(false);
                         setParam(param);
+                        setIsText(
+                            param === "planetName" || param === "climate"
+                                ? true
+                                : false
+                        );
                     }}
                     className={`fas fa-caret-up ${
                         !isAscending ? "active-icon" : "inactive-icon"
@@ -33,6 +40,11 @@ const SingleHeader: React.FC<Props> = ({
                     onClick={() => {
                         setIsAscending(true);
                         setParam(param);
+                        setIsText(
+                            param === "planetName" || param === "climate"
+                                ? true
+                                : false
+                        );
                     }}
                     className={`fas fa-caret-down ${
                         isAscending ? "active-icon" : "inactive-icon"

@@ -50,6 +50,7 @@ const CollapsibleMobile: React.FC<Props> = ({ singleFilm }) => {
                             setParam={setParam}
                             isAscending={isAscending}
                             setIsAscending={setIsAscending}
+                            setIsText={() => true}
                         />
                         <CollapsibleContent
                             singlePlanet={singlePlanet}
