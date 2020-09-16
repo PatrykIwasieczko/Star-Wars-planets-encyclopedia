@@ -1,5 +1,8 @@
-export const transformData = (films, planets) => {
-    const filmData = [];
+// Types
+import { PlanetData, FilmData, Film } from "./components/types";
+
+export const transformData = (films: FilmData[], planets: PlanetData[]) => {
+    const filmData: Film[] = [];
     films.map((film) => {
         return filmData.push({
             filmId: film.id,
@@ -15,9 +18,15 @@ export const transformData = (films, planets) => {
                         data.planetsInFilms.push({
                             planetId: planet.id,
                             planetName: planet.name,
-                            rotationPeriod: planet.rotationPeriod,
-                            orbitalPeriod: planet.orbitalPeriod,
-                            diameter: planet.diameter,
+                            rotationPeriod: planet.rotationPeriod
+                                ? planet.rotationPeriod
+                                : "unknown",
+                            orbitalPeriod: planet.orbitalPeriod
+                                ? planet.orbitalPeriod
+                                : "unknown",
+                            diameter: planet.diameter
+                                ? planet.diameter
+                                : "unknown",
                             climate: planet.climates[0],
                             surfaceWater: planet.surfaceWater
                                 ? planet.surfaceWater

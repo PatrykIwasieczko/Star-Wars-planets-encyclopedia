@@ -12,16 +12,17 @@ body {
   background-color: #e0e6ee;
 }
 
+.wrapper {
+  width: 95vw;
+  margin: 0 auto;
+}
+
 .logo {
   display: flex;
   justify-content: center;
   margin: 2rem 0;
 }
 
-.wrapper {
-  width: 95vw;
-  margin: 0 auto;
-}
 
 .collapsible {
   margin: 1rem 0;
@@ -39,36 +40,27 @@ body {
   color: #20a1be;
   cursor: pointer;
   border-radius: inherit;
+  box-shadow: 0px 2px 5px 0px rgba(220, 220, 220, 0.75);
 }
 
 .collapsible-opened {
   background-color: #fcfcfd;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  padding: 0.5rem 1rem;
+  padding: 1rem 0 1rem 0rem;
   text-align: right;
 }
 
-.collapsible-content {
-  box-shadow: 0px -1px 5px 0px rgba(220, 220, 220, 0.75);
+.collapsible-opened:first-child {
+  padding-top: 0;
 }
 
-.collapsible-closed {
-  display: none;
+.collapsible-content {
+  margin: 1rem;
 }
 
 .closed {
   display: none;
-}
-
-
-.single-collapsible {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.single-collapsible:first-child {
-  justify-content: flex-start;
 }
 
 .headers {
@@ -102,7 +94,14 @@ body {
   margin-right: 20px;
 }
 
+.single-collapsible {
+  display: flex;
+  justify-content: flex-end;
+}
 
+.single-collapsible:first-child {
+  justify-content: flex-start;
+}
 
 @media screen and (max-width: 600px) {
 
@@ -113,6 +112,7 @@ body {
   .collapsible-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 1rem;
   }
 
   .collapsible-row:nth-child(odd) {
@@ -123,14 +123,18 @@ body {
     background-color: #f2f2f2;
   }
 
-  .headers {
-    border: none;
-  }
-
   .headers,
   .collapsible-opened {
     display: flex;
     flex-direction: column;
+  }
+
+  .collapsible-opened {
+    padding: 0;
+  }
+
+  .collapsible-content {
+    margin: 0;
   }
 
   .caret-icons {
@@ -140,6 +144,10 @@ body {
   .collapsible-text {
     padding: 10px 0;
     text-align: left;
+  }
+
+  .headers {
+    border: none;
   }
 
   .single-collapsible {
