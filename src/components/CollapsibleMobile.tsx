@@ -6,7 +6,7 @@ import CollapsibleContent from "./CollapsibleContent";
 import CollapsibleHeaders from "./CollapsibleHeaders";
 
 // Types
-import { Film } from "./types";
+import { Film } from "../helpers/types";
 
 type Props = {
     singleFilm: Film;

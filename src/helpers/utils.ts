@@ -1,5 +1,5 @@
 // Types
-import { PlanetData, FilmData, Film } from "./components/types";
+import { PlanetData, FilmData, Film } from "./types";
 
 export const transformData = (films: FilmData[], planets: PlanetData[]) => {
     const filmData: Film[] = [];

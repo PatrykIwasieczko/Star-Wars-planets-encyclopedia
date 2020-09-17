@@ -8,6 +8,8 @@ type Props = {
     setParam: (param: string) => void;
     param: string;
     setIsText: (boolean: boolean) => void;
+    setActiveIcon: (icon: string) => void;
+    activeIcon: string;
 };
 
 const SingleHeader: React.FC<Props> = ({
@@ -17,15 +19,18 @@ const SingleHeader: React.FC<Props> = ({
     setParam,
     param,
     setIsText,
+    setActiveIcon,
+    activeIcon,
 }) => {
     return (
         <div className="single-collapsible">
             <p className="collapsible-text">{headerTitle}</p>
-            <div className="caret-icons">
+            <div className={`caret-icons ${activeIcon}`}>
                 <i
                     onClick={() => {
                         setIsAscending(false);
                         setParam(param);
+                        setActiveIcon(param);
                         setIsText(
                             param === "planetName" || param === "climate"
                                 ? true
@@ -33,13 +38,16 @@ const SingleHeader: React.FC<Props> = ({
                         );
                     }}
                     className={`fas fa-caret-up ${
-                        !isAscending ? "active-icon" : "inactive-icon"
+                        !isAscending && activeIcon === param
+                            ? "active-icon"
+                            : "inactive-icon"
                     }`}
                 ></i>
                 <i
                     onClick={() => {
                         setIsAscending(true);
                         setParam(param);
+                        setActiveIcon(param);
                         setIsText(
                             param === "planetName" || param === "climate"
                                 ? true
@@ -47,7 +55,9 @@ const SingleHeader: React.FC<Props> = ({
                         );
                     }}
                     className={`fas fa-caret-down ${
-                        isAscending ? "active-icon" : "inactive-icon"
+                        isAscending && activeIcon === param
+                            ? "active-icon"
+                            : "inactive-icon"
                     }`}
                 ></i>
             </div>

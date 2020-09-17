@@ -2,7 +2,7 @@
 import React from "react";
 
 // Types
-import { Planet } from "./types";
+import { Planet } from "../helpers/types";
 
 type Props = {
     singlePlanet: Planet;

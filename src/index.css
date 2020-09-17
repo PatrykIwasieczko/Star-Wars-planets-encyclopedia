@@ -6,7 +6,6 @@
 
 body {
   font-family: "Raleway", sans-serif;
-  font-size: 0.9rem;
   line-height: 1.5;
   letter-spacing: 1.1px;
   background-color: #e0e6ee;
@@ -23,7 +22,6 @@ body {
   margin: 2rem 0;
 }
 
-
 .collapsible {
   margin: 1rem 0;
   background-color: #fff;
@@ -34,7 +32,6 @@ body {
 .collapsible-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   background-color: #fff;
   padding: 1rem;
   color: #20a1be;
@@ -63,12 +60,25 @@ body {
   display: none;
 }
 
+.collapsible-text:first-child {
+  text-align: left;
+}
+
 .headers {
   border-bottom: 1px solid #c4c4c4;
 }
 
-.collapsible-text:first-child {
-  text-align: left;
+.single-collapsible {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.single-collapsible:first-child {
+  justify-content: flex-start;
+}
+
+.text-content {
+  margin-right: 20px;
 }
 
 .caret-icons {
@@ -90,24 +100,7 @@ body {
   color: #000;
 }
 
-.text-content {
-  margin-right: 20px;
-}
-
-.single-collapsible {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.single-collapsible:first-child {
-  justify-content: flex-start;
-}
-
 @media screen and (max-width: 600px) {
-
-  .collapsible-opened {
-    background-color: inherit;
-  }
 
   .collapsible-row {
     display: grid;
@@ -123,22 +116,23 @@ body {
     background-color: #f2f2f2;
   }
 
+  .collapsible-opened {
+    background-color: inherit;
+    padding: 0;
+  }
+
+  .headers {
+    border: none;
+  }
+
   .headers,
   .collapsible-opened {
     display: flex;
     flex-direction: column;
   }
 
-  .collapsible-opened {
-    padding: 0;
-  }
-
   .collapsible-content {
-    margin: 0;
-  }
-
-  .caret-icons {
-    display: none;
+    margin: 0.1rem 0 0 0;
   }
 
   .collapsible-text {
@@ -146,13 +140,12 @@ body {
     text-align: left;
   }
 
-  .headers {
-    border: none;
-  }
-
   .single-collapsible {
     justify-content: flex-start;
   }
 
+  .caret-icons {
+    display: none;
+  }
 
 }

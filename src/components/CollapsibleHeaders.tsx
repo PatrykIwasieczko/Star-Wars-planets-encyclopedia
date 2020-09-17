@@ -1,5 +1,5 @@
 // React
-import React from "react";
+import React, { useState } from "react";
 
 // Components
 import SingleHeader from "./SingleHeader";
@@ -28,9 +28,9 @@ const CollapsibleHeaders: React.FC<Props> = ({
     setParam,
     isAscending,
     setIsAscending,
-    param,
     setIsText,
 }) => {
+    const [activeIcon, setActiveIcon] = useState<string>("");
     return (
         <ul
             className={
@@ -48,6 +48,8 @@ const CollapsibleHeaders: React.FC<Props> = ({
                     setParam={setParam}
                     param={headersTitle.key}
                     setIsText={setIsText}
+                    setActiveIcon={setActiveIcon}
+                    activeIcon={activeIcon}
                 />
             ))}
         </ul>

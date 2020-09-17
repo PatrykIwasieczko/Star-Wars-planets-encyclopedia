@@ -2,15 +2,15 @@
 import React, { useEffect, useState } from "react";
 
 // Components
-import { DATA } from "./data";
+import { DATA } from "./helpers/data";
 import Collapsible from "./components/Collapsible";
 import CollapsibleMobile from "./components/CollapsibleMobile";
 
 // Utils
-import { transformData } from "./utils";
+import { transformData } from "./helpers/utils";
 
 // Types
-import { Film, FilmData, PlanetData } from "./components/types";
+import { Film, FilmData, PlanetData } from "./helpers/types";
 
 const App = () => {
     const [planets] = useState<PlanetData[]>(DATA.data.planets);
