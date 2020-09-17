@@ -10,7 +10,7 @@ type Props = {
 };
 
 const CollapsibleContent: React.FC<Props> = ({ singlePlanet, isOpen }) => {
-    const headers = [
+    const rows = [
         singlePlanet.planetName,
         singlePlanet.rotationPeriod,
         singlePlanet.orbitalPeriod,
@@ -24,9 +24,9 @@ const CollapsibleContent: React.FC<Props> = ({ singlePlanet, isOpen }) => {
             key={singlePlanet.planetId}
             className={isOpen ? "collapsible-opened" : "collapsible-closed"}
         >
-            {headers.map((header, index) => (
+            {rows.map((row, index) => (
                 <p key={index} className="collapsible-text text-content">
-                    {header}
+                    {row ? row : "unknown"}
                 </p>
             ))}
         </ul>

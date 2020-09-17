@@ -15,7 +15,6 @@ type Props = {
 const CollapsibleMobile: React.FC<Props> = ({ singleFilm }) => {
     const [param, setParam] = useState<string>("");
     const [isAscending, setIsAscending] = useState<boolean>(false);
-
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div className="collapsible" key={singleFilm.filmId}>
@@ -50,7 +49,6 @@ const CollapsibleMobile: React.FC<Props> = ({ singleFilm }) => {
                             setParam={setParam}
                             isAscending={isAscending}
                             setIsAscending={setIsAscending}
-                            setIsText={() => true}
                         />
                         <CollapsibleContent
                             singlePlanet={singlePlanet}

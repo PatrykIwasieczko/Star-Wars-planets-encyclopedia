@@ -7,12 +7,12 @@ export type Film = {
 export type Planet = {
     planetId: string;
     planetName: string;
-    rotationPeriod: number | string;
-    orbitalPeriod: number | string;
-    diameter: number | string;
+    rotationPeriod: number | undefined;
+    orbitalPeriod: number | undefined;
+    diameter: number | undefined;
     climate: string;
-    surfaceWater: number | string;
-    population: number | string;
+    surfaceWater: number | undefined;
+    population: number | undefined;
 };
 
 export type FilmData = {

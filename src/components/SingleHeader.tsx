@@ -7,7 +7,6 @@ type Props = {
     isAscending: boolean;
     setParam: (param: string) => void;
     param: string;
-    setIsText: (boolean: boolean) => void;
     setActiveIcon: (icon: string) => void;
     activeIcon: string;
 };
@@ -18,7 +17,6 @@ const SingleHeader: React.FC<Props> = ({
     isAscending,
     setParam,
     param,
-    setIsText,
     setActiveIcon,
     activeIcon,
 }) => {
@@ -31,11 +29,6 @@ const SingleHeader: React.FC<Props> = ({
                         setIsAscending(false);
                         setParam(param);
                         setActiveIcon(param);
-                        setIsText(
-                            param === "planetName" || param === "climate"
-                                ? true
-                                : false
-                        );
                     }}
                     className={`fas fa-caret-up ${
                         !isAscending && activeIcon === param
@@ -48,11 +41,6 @@ const SingleHeader: React.FC<Props> = ({
                         setIsAscending(true);
                         setParam(param);
                         setActiveIcon(param);
-                        setIsText(
-                            param === "planetName" || param === "climate"
-                                ? true
-                                : false
-                        );
                     }}
                     className={`fas fa-caret-down ${
                         isAscending && activeIcon === param

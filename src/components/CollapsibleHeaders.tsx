@@ -20,7 +20,6 @@ type Props = {
     isAscending: boolean;
     setIsAscending: (boolean: boolean) => void;
     param: string;
-    setIsText: (boolean: boolean) => void;
 };
 
 const CollapsibleHeaders: React.FC<Props> = ({
@@ -28,7 +27,6 @@ const CollapsibleHeaders: React.FC<Props> = ({
     setParam,
     isAscending,
     setIsAscending,
-    setIsText,
 }) => {
     const [activeIcon, setActiveIcon] = useState<string>("");
     return (
@@ -47,7 +45,6 @@ const CollapsibleHeaders: React.FC<Props> = ({
                     isAscending={isAscending}
                     setParam={setParam}
                     param={headersTitle.key}
-                    setIsText={setIsText}
                     setActiveIcon={setActiveIcon}
                     activeIcon={activeIcon}
                 />
